@@ -1,0 +1,29 @@
+server:
+  port: 8082
+
+remote-agent:
+  token: 360_simflofy_1740013601249
+  agent-name: my-remote-agent
+  grpc-server:
+    host: localhost
+    port: 50052
+    timeouts:
+      configure-connector-form-rpc: 120
+      share-document-metadata-rpc: 30
+      share-documents-rpc: 300
+      share-document-rpc: 60
+      send-deletion-response-rpc: 60
+      validate-agent-token-rpc: 60
+      write-document-request-rpc: 30
+      get-extended-document-rpc: 30
+  server-url: http://localhost:8080/3sixty-admin
+  ssl-config:
+    ca-certs:
+      password: changeit
+    enabled: false
+
+logging:
+  level:
+    com.objective.threesixty:
+      remoteagent.sdk: INFO
+      agent: INFO
