@@ -444,7 +444,7 @@ public class MongoDBReader implements RepositoryReader {
             tdoc.put("$lte", cal.getTime());
         }
         if (!tdoc.isEmpty()) {
-            String queryField = METADATA_DOT + LAST_MODIFIED;
+            String queryField = METADATA_DOT+LAST_MODIFIED;
             queryObject.put(queryField, tdoc);
         }
     }

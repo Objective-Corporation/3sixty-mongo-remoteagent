@@ -140,7 +140,7 @@ public class MongoDBWriter implements RepositoryWriter {
         for (Map.Entry<String, MetadataType> entry : metadata.entrySet()) {
             getLogger().trace("==> key = " + entry.getKey());
             getLogger().trace("==> key value = " + extractMetadataStringValue(entry.getKey(), entry.getValue()));
-            insertDoc.put(METADATA_DOT+entry.getKey(), extractMetadataStringValue(entry.getKey(), entry.getValue()));
+            insertDoc.put(entry.getKey(), extractMetadataStringValue(entry.getKey(), entry.getValue()));
         }
         getLogger().debug("==> Metadata added to document");
 
@@ -159,19 +159,19 @@ public class MongoDBWriter implements RepositoryWriter {
 
     // Add Simflofy-specific metadata to document
     private void addSimMeta(org.bson.Document meta, Document doc) {
-        meta.put(METADATA_DOT+SIMFLOFY_CREATED_BY, SIMFLOFY);
-        meta.put(METADATA_DOT+SIMFLOFY_CREATED, new Date());
-        meta.put(METADATA_DOT+SIMFLOFY_PATH_FIELD, doc.getParentPath());
-        meta.put(METADATA_DOT+SIMFLOFY_DOWNLOADABLE_FIELD, false);
-        meta.put(METADATA_DOT+SIMFLOFY_FILENAME_FIELD, doc.getName());
-        meta.put(METADATA_DOT+LAST_MODIFIED, new Date(doc.getModifiedDate().getSeconds() * 1000));
-        meta.put(METADATA_DOT+CREATED, new Date(doc.getCreatedDate().getSeconds() * 1000));
-        meta.put(METADATA_DOT+SIMFLOFY_TYPENAME, DOCUMENT);
-        meta.put(METADATA_DOT+SIMFLOFY_LAST_MODIFIED, new Date());
-        meta.put(METADATA_DOT+SIMFLOFY_LAST_MODIFIED_BY, SIMFLOFY);
-        meta.put(METADATA_DOT+SIMFLOFY_CONTENT_TYPE_FIELD, doc.getMimeType());
-        meta.put(METADATA_DOT+SIMFLOFY_LENGTH_FIELD, doc.getSize());
-        meta.put(METADATA_DOT+SIMFLOFY_SOURCE_REPOSITORY_ID_FIELD, doc.getId());
+        meta.put(SIMFLOFY_CREATED_BY, SIMFLOFY);
+        meta.put(SIMFLOFY_CREATED, new Date());
+        meta.put(SIMFLOFY_PATH_FIELD, doc.getParentPath());
+        meta.put(SIMFLOFY_DOWNLOADABLE_FIELD, false);
+        meta.put(SIMFLOFY_FILENAME_FIELD, doc.getName());
+        meta.put(LAST_MODIFIED, new Date(doc.getModifiedDate().getSeconds() * 1000));
+        meta.put(CREATED, new Date(doc.getCreatedDate().getSeconds() * 1000));
+        meta.put(SIMFLOFY_TYPENAME, DOCUMENT);
+        meta.put(SIMFLOFY_LAST_MODIFIED, new Date());
+        meta.put(SIMFLOFY_LAST_MODIFIED_BY, SIMFLOFY);
+        meta.put(SIMFLOFY_CONTENT_TYPE_FIELD, doc.getMimeType());
+        meta.put(SIMFLOFY_LENGTH_FIELD, doc.getSize());
+        meta.put(SIMFLOFY_SOURCE_REPOSITORY_ID_FIELD, doc.getId());
     }
 
     // Extract String value from metadata
