@@ -160,13 +160,13 @@ Integration Connection` you created in [Step 3](#3-create-an-integration-connect
 ![img.png](docs/images/3sixty/create_job.png)
 
 6. Click `SAVE` to complete the creation of the new Job.
-7. Go to the Remote Agent Configuration Tab and enter the File Path configuration that you configured in your Agent
+7. Go to the Remote Agent Integration Connection configuration tab and enter 
+the configuration for your Remote Agent.
 
 ![img.png](docs/images/3sixty/mongo_config.png)
 
-7. Go to the File System Configuration tab and enter the destination File System directory
-
-8. Go to `Integration -> Run and Monitor Jobs`
+8. Click `SAVE` to save your changes.
+9. Navigate to `Integration -> Run and Monitor Jobs` from the left navigation menu.
 9. Locate your integration job and select `run`. You can use the search
 field to filter for the job name.
 
