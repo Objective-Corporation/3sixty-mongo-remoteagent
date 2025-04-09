@@ -163,7 +163,7 @@ Integration Connection` you created in [Step 3](#3-create-an-integration-connect
 7. Go to the Remote Agent Integration Connection configuration tab and enter 
 the configuration for your Remote Agent.
 
-![img.png](docs/images/3sixty/mongo_config.png)
+<img alt="img.png" src="docs/images/3sixty/mongo_config.png" width="70%"/>
 
 8. Click `SAVE` to save your changes.
 9. Navigate to `Integration -> Run and Monitor Jobs` from the left navigation menu.
