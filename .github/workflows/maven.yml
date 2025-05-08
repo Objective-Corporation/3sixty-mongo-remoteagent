@@ -29,9 +29,8 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - name: Archive Build Artifacts
-        uses: actions/upload-artifact@v4
-        name: jars
-        with:
-          path: target/*.jar
-
+    - name: Upload Jar Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: test.jar
+        path: target/*exec.jar
