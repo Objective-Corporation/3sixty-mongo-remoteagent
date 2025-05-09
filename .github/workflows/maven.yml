@@ -36,8 +36,9 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
       
-    # Upload executable jar
-    - name: Upload Executable Jar
+    # Upload jars
+    - name: Upload Jars
       uses: actions/upload-artifact@v4
       with:
-        path: target/*exec.jar
+        name: jars
+        path: target/*.jar
