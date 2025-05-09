@@ -60,4 +60,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: ${{ env.JAR_FILE_NAME }}
-        path: target/${{ env.JAR_FILE_NAME }}
+        path: target/*exec.jar
