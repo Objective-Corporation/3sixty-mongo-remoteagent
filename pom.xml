@@ -10,13 +10,13 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.objective.threesixty</groupId>
-    <artifactId>remote-agent-example</artifactId>
+    <groupId>com.objective.threesixty.agent</groupId>
+    <artifactId>mongodb</artifactId>
     <version>${revision}${sha1}${changelist}</version>
     <packaging>jar</packaging>
 
-    <name>3Sixty Remote Agent Example</name>
-    <description>Objective 3Sixty Remote Agent Example Implementation</description>
+    <name>3Sixty Remote Agent for MongoDb</name>
+    <description>Objective 3Sixty Remote Agent MongoDb Implementation</description>
     <url>https://www.objective.com/products/objective-3sixty</url>
 
     <licenses>
@@ -42,7 +42,7 @@
     </scm>
 
     <properties>
-        <revision>1.3.0</revision>
+        <revision>1.0.0</revision>
         <sha1></sha1>
         <changelist>-SNAPSHOT</changelist>
 
@@ -70,7 +70,7 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.14.0</version>
+            <version>3.14.0</version><!--$NO-MVN-MAN-VER$-->
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
