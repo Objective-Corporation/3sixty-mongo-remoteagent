@@ -32,13 +32,24 @@ jobs:
         distribution: 'temurin'
         cache: maven
         
+    - name: Extract Project Information
+      id: extract_project_information
+      shell: bash
+      run: |      
+        ARTIFACT_ID=$(mvn help:evaluate -Dexpression=artifactId -q -DforceStdout)
+        echo "ARTIFACT_ID=$ARTIFACT_ID" >> $GITHUB_ENV   
+        REVISION=$(mvn help:evaluate -Dexpression=revision -q -DforceStdout)
+        echo "REVISION=$REVISION" >> $GITHUB_ENV        
+        SNAPSHOT=$(mvn help:evaluate -Dexpression=snapshot -q -DforceStdout)
+        echo "SNAPSHOT=$SNAPSHOT" >> $GITHUB_ENV
+        
     # Maven build
     - name: Build with Maven
       run: mvn clean -B package --file pom.xml
       
     # Upload jars
-    - name: Upload Jars
+    - name: Upload Jar
       uses: actions/upload-artifact@v4
       with:
-        name: jars
-        path: target/*.jar
+        name: ${{ env.ARTIFACT_ID }}-${{ env.REVISION }}${{ env.SNAPSHOT }}-exec.jar
+        path: target/*exec.jar
