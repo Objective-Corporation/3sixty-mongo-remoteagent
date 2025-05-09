@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>com.objective.threesixty.agent</groupId>
-    <artifactId>mongodb</artifactId>
+    <artifactId>threesixty-agent-mongodb</artifactId>
     <version>${revision}${sha1}${changelist}</version>
     <packaging>jar</packaging>
 

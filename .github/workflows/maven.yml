@@ -34,7 +34,7 @@ jobs:
         
     # Maven build
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn clean -B package --file pom.xml
       
     # Upload jars
     - name: Upload Jars
