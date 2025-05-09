@@ -36,12 +36,12 @@ jobs:
       id: extract_project_information
       shell: bash
       run: |      
-        ARTIFACT_ID=$(mvn help:evaluate -Dexpression=artifactId -q -DforceStdout)
+        ARTIFACT_ID=$(mvn help:evaluate -Dexpression=project.artifactId -q -DforceStdout)
         echo "ARTIFACT_ID=$ARTIFACT_ID" >> $GITHUB_ENV   
         REVISION=$(mvn help:evaluate -Dexpression=revision -q -DforceStdout)
         echo "REVISION=$REVISION" >> $GITHUB_ENV        
-        SNAPSHOT=$(mvn help:evaluate -Dexpression=snapshot -q -DforceStdout)
-        echo "SNAPSHOT=$SNAPSHOT" >> $GITHUB_ENV
+        CHANGE_LIST=$(mvn help:evaluate -Dexpression=changelist -q -DforceStdout)
+        echo "CHANGE_LIST=$CHANGE_LIST" >> $GITHUB_ENV
         
     # Maven build
     - name: Build with Maven
