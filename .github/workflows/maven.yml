@@ -44,3 +44,13 @@ jobs:
       with:
         name: ${{ env.JAR_FILE_NAME }}
         path: target/*exec.jar
+		
+	- name: Create Release on Tagged
+	  if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
+	  uses: actions/create-release@v4
+	  with:
+        tag_name: ${{ github.ref_name }}
+        release_name: Release ${GITHUB_REF_NAME}
+        body: Automatically created release from GitHub Actions workflow.
+        draft: false
+        prerelease: false
